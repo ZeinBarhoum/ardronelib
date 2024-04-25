@@ -115,15 +115,31 @@ extern void *please_use_vp_os_memset(void *s, int c, size_t n);
 #undef free
 #undef realloc
 
+#ifdef __cplusplus
+}
+#endif
+
+
+// #define calloc please_use_vp_os_calloc
+// #define malloc please_use_vp_os_malloc
+// #define memset please_use_vp_os_memset
+// #define free please_use_vp_os_free
+// #define realloc please_use_vp_os_realloc
+
+// Prevent macro redefinition in C++ code
+#ifndef __cplusplus
+#undef calloc
+#undef malloc
+#undef memset
+#undef free
+#undef realloc
+
 #define calloc please_use_vp_os_calloc
 #define malloc please_use_vp_os_malloc
 #define memset please_use_vp_os_memset
 #define free please_use_vp_os_free
 #define realloc please_use_vp_os_realloc
-
-#ifdef __cplusplus
-}
-#endif
+#endif // __cplusplus
 
 
 #endif // ! _MALLOC_INCLUDE_OS_
