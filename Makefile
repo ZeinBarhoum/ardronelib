@@ -23,3 +23,9 @@ all:
 install:
 	mkdir -p ${INSTALL_PREFIX}
 	find $(SDK_PATH)/Soft/Build -type f -name '*.a' -exec cp '{}' ${INSTALL_PREFIX} \;
+
+clean:
+	rm -r $(SDK_PATH)/Soft/Build/targets_versions
+	rm -r $(SDK_PATH)/FFMPEG/ffmpeg 
+	rm -r $(SDK_PATH)/FFMPEG/Includes 
+	rm $(SDK_PATH)/Soft/Common/generated_custom.h
